@@ -1,0 +1,17 @@
+<!-- list customer using bootstrap table -->
+<table class="table table-striped dark">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Customer Phone</th>
+      <th>Customer Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.mobile}}</td>
+      <td>{{ customer.address }}</td>
+    </tr>
+  </tbody>
+</table>

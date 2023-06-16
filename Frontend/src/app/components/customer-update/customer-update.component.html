@@ -1,0 +1,47 @@
+<h2>Update Customers</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Customer ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Mobile Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.mobileNumber }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editCustomer(customer)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedCustomer">
+  <h3>Edit Customer</h3>
+  <form (ngSubmit)="updateCustomer()" class="container">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="selectedCustomer.name" name="name" id="name" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" [(ngModel)]="selectedCustomer.address" name="address" id="address" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number</label>
+      <input type="text" [(ngModel)]="selectedCustomer.mobileNumber" name="mobileNumber" id="mobileNumber" class="form-control" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update Customer</button>
+  </form>
+</div>
