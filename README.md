@@ -46,10 +46,9 @@ Follow the steps below to set up and run the application:
 The backend API provides the following endpoints:
 
 - GET `/api/customers`: Get a list of all customers.
-- POST `/api/customers`: Create a new customer.
-- GET `/api/customers/{id}`: Get details of a specific customer.
-- PUT `/api/customers/{id}`: Update the details of a specific customer.
-- DELETE `/api/customers/{id}`: Delete a specific customer.
+- POST `/api/customers/add`: Create a new customer.
+- PUT `/api/customers/update/{id}`: Update the details of a specific customer.
+- DELETE `/api/customers/remove/{id}`: Delete a specific customer.
 
 ## Contributing
 
